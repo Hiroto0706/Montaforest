@@ -1,0 +1,16 @@
+h1{
+    font-size: 50px;
+    border-bottom: 1px solid;
+    margin: 16px 0;
+}
+
+li{
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.container{
+    width: 700px;
+    margin: 40px auto;
+    padding-top: 20px;
+}
