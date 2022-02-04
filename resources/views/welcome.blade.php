@@ -5,10 +5,10 @@
 
     <h1>もんたの森へようこそ！！</h1>
     <ul>
-        @forelse ($posts as $id => $post)
+        @forelse ($posts as $post)
             <li>
-                <a href="{{route('posts.show', $id)}}">
-                    {{$post}}
+                <a href="{{route('posts.show', $post)}}">
+                    {{$post->title}}
                 </a>
             </li>
         @empty
