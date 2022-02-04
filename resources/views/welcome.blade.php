@@ -3,7 +3,10 @@
         もんたの森
     </x-slot>
 
-    <h1>もんたの森へようこそ！！</h1>
+    <h1>
+        <span>もんたの森へようこそ！！</span>
+        <a href="{{route('posts.create')}}">[Add]</a>
+    </h1>
     <ul>
         @forelse ($posts as $post)
             <li>
