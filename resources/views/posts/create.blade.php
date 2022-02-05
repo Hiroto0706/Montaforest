@@ -22,7 +22,7 @@
         <div class="form-group">
             <label>
                 画像ファイル
-                <input type="file" name="image">
+                <input type="file" name="image" accept="image/png, image/jgep, image/jpg">
             </label>
             @error('image')
                 <div class="error">{{$message}}</div>
