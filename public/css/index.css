@@ -18,8 +18,31 @@ li{
     margin-bottom: 8px;
 }
 
+input,textarea{
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea{
+    height: 160px;
+}
+
+button{
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
 .container{
     width: 600px;
     margin: 40px auto;
     padding-top: 20px;
+}
+
+.form-group{
+    margin-bottom: 16px;
+}
+
+.form-button{
+    text-align: right;
 }
