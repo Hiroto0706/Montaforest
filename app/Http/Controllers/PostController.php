@@ -24,4 +24,26 @@ class PostController extends Controller
     public function create(){
         return view('posts.create');
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required',
+            'image' => 'required',
+        ]);
+
+        $post = new Post();
+        $post->title = $request->title;
+        $post->body = $request->body;
+
+        //imageに元の画像の名前で保存
+        $filename = $request->image->getClientOriginalName();
+        $post->image = $request->image->storeAs('',$filename,'public');
+
+        $post->save();
+
+        return redirect()
+            ->route('posts.index');
+    }
 }
