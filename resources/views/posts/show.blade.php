@@ -7,8 +7,8 @@
         &laquo;<a href="{{route('posts.index')}}">back</a>
     </div>
     <h1>{{$post->title}}</h1>
-    <div>
-        <img src="{{ asset('storage/' . $post->image) }}">
+    <div class="show_picture">
+        <img src="{{asset('storage/' . $post->image)}}">
     </div>
     <p>{{$post->body}}</p>
 </x-layout>

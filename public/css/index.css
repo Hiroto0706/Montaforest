@@ -33,6 +33,11 @@ button{
     font-size: 14px;
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
+
 .container{
     width: 600px;
     margin: 40px auto;
@@ -52,3 +57,9 @@ button{
     font-size: 14px;
     margin-top: 8px;
 }
+
+.show_picture{
+    width: 600px;
+}
+
+
