@@ -79,8 +79,10 @@ class PostController extends Controller
 
         $post->title = $request->title;
         $post->body = $request->body;
-        $post->image = $request->image;
 
+        if($request->image != null)
+        {
+        $post->image = $request->image;
         $file = $request->file('image');
         $resized = InterventionImage::make($file)->resize(1920, null, function ($constraint) {
             $constraint->aspectRatio();
@@ -88,6 +90,7 @@ class PostController extends Controller
 
         //画像の保存
         Storage::put('public/' . $post->image, $resized);
+    }
 
         $post->save();
 
