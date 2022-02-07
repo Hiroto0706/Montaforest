@@ -27,6 +27,11 @@ Route::get('/posts/create',[PostController::class, 'create'])
 
 Route::post('/posts/store',[PostController::class, 'store'])
     ->name('posts.store');
-    
-Route::post('/posts/store',[PostController::class, 'store'])
-    ->name('posts.store');
+
+Route::get('/posts/{post}/edit',[PostController::class, 'edit'])
+    ->name('posts.edit')
+    ->where('post', '[0-9]+');
+
+Route::patch('/posts/{post}/update',[PostController::class, 'update'])
+    ->name('posts.update')
+    ->where('post', '[0-9]+');

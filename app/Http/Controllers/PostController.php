@@ -59,4 +59,40 @@ class PostController extends Controller
         return redirect()
             ->route('posts.index');
     }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit')
+            ->with(['post' => $post]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|min:3',
+            'body' => 'required',
+        ],[
+            'title.required' => 'タイトルがありません',
+            'title.min' => 'min 文字以上入力してください',
+            'body.required' => '本文がありません',
+        ]);
+
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->image = $request->image;
+
+        $file = $request->file('image');
+        $resized = InterventionImage::make($file)->resize(1920, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->save();
+
+        //画像の保存
+        Storage::put('public/' . $post->image, $resized);
+
+        $post->save();
+
+        return redirect()
+            ->route('posts.show', $post);
+    }
+
 }
