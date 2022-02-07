@@ -59,6 +59,11 @@ a{
     padding-top: 20px;
 }
 
+.welcome_pic{
+    width: 30%;
+    height: 200px;
+}
+
 .form-group{
     margin-bottom: 16px;
 }

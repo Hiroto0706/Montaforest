@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MontaController;
 
 
 /*
@@ -38,4 +39,29 @@ Route::patch('/posts/{post}/update',[PostController::class, 'update'])
 
 Route::delete('/posts/{post}/destroy',[PostController::class, 'destroy'])
     ->name('posts.destroy')
+    ->where('post', '[0-9]+');
+
+Route::get('/monta/', [MontaController::class, 'mondex'])
+    ->name('monta.index');
+
+Route::get('/monta/posts/{post}',[MontaController::class, 'show'])
+    ->name('monta.show')
+    ->where('post', '[0-9]+');
+
+Route::get('/monta/posts/create',[MontaController::class, 'create'])
+    ->name('monta.create');
+
+Route::post('/monta/posts/store',[MontaController::class, 'store'])
+    ->name('monta.store');
+
+Route::get('/monta/posts/{post}/edit',[MontaController::class, 'edit'])
+    ->name('monta.edit')
+    ->where('post', '[0-9]+');
+
+Route::patch('/monta/posts/{post}/update',[MontaController::class, 'update'])
+    ->name('monta.update')
+    ->where('post', '[0-9]+');
+
+Route::delete('/monta/posts/{post}/destroy',[MontaController::class, 'destroy'])
+    ->name('monta.destroy')
     ->where('post', '[0-9]+');
