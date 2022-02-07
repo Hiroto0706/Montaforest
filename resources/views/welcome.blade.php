@@ -12,6 +12,9 @@
                 <a href="{{route('posts.show', $post)}}">
                     {{$post->title}}
                 </a>
+                <div class="welcome_pic">
+                    <img src="{{asset('storage/' . $post->image)}}">
+                </div>
             </li>
         @empty
             <li>データありまへんわ！</li>
