@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
+use App\Http\Requests\PostRequest;
 use InterventionImage;
 
 
@@ -28,19 +29,8 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        $request->validate([
-            'title' => 'required|min:3',
-            'body' => 'required',
-            'image' => 'required',
-        ],[
-            'title.required' => 'タイトルがありません',
-            'title.min' => 'min 文字以上入力してください',
-            'body.required' => '本文がありません',
-            'image.required' => 'アップロードする画像を選択してください',
-        ]);
-
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;
@@ -73,7 +63,7 @@ class PostController extends Controller
             'body' => 'required',
         ],[
             'title.required' => 'タイトルがありません',
-            'title.min' => 'min 文字以上入力してください',
+            'title.min' => ':min 文字以上入力してください',
             'body.required' => '本文がありません',
         ]);
 
