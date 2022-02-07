@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{url('css/index.css')}}">
 </head>
 <body>
+    <img src="{{asset('img/frontmonta.png')}}" class="front_pic">
     <div class="container">
        {{$slot}}
     </div>

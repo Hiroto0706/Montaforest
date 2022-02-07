@@ -2,7 +2,6 @@
     <x-slot name="title">
         もんたの森
     </x-slot>
-
     <h1>
         <span>もんたの森へようこそ！！</span>
         <a href="{{route('posts.create')}}">[Add]</a>
