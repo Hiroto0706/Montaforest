@@ -4,13 +4,13 @@ h1{
     margin: 16px 0;
     padding-bottom: 8px;
     display: flex;
+    align-items: center;
 }
 
 h1 > a{
-    font-size: 30px;
+    font-size: 16px;
     font-weight: normal;
     margin-left: auto;
-    align-items: center;
 }
 
 li{
@@ -38,6 +38,10 @@ img{
     height: auto;
 }
 
+a{
+    text-decoration: none;
+}
+
 .container{
     width: 600px;
     margin: 40px auto;
@@ -62,4 +66,12 @@ img{
     width: 600px;
 }
 
-
+.button{
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: normal;
+    color: #15c;
+    cursor: pointer;
+    vertical-align: 5px;
+}
