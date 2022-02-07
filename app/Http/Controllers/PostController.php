@@ -34,6 +34,11 @@ class PostController extends Controller
             'title' => 'required|min:3',
             'body' => 'required',
             'image' => 'required',
+        ],[
+            'title.required' => 'タイトルがありません',
+            'title.min' => 'min 文字以上入力してください',
+            'body.required' => '本文がありません',
+            'image.required' => 'アップロードする画像を選択してください',
         ]);
 
         $post = new Post();
@@ -42,18 +47,14 @@ class PostController extends Controller
         $post->image = $request->image;
 
         $file = $request->file('image');
-        // $resized = InterventionImage::make($file)->resize(1080, 1700)->save(public_path('public' . $post->image));
-        $resized = InterventionImage::make($file)->resize(1920, 1080, function ($constraint) {
+        $resized = InterventionImage::make($file)->resize(1920, null, function ($constraint) {
             $constraint->aspectRatio();
         })->save();
-
-        // dd($file);
 
         //画像の保存
         Storage::put('public/' . $post->image, $resized);
 
         $post->save();
-        // dd($file);
 
         return redirect()
             ->route('posts.index');

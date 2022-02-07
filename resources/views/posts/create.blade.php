@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        もんたの森 - 新しい投稿 -
+        もんたの森 - 画像のアップロード -
     </x-slot>
 
     <div>
@@ -13,7 +13,7 @@
         <div class="form-group">
             <label>
                 画像のタイトル
-                <input type="text" name="title">
+                <input type="text" name="title" value="{{old('title')}}">
             </label>
             @error('title')
                 <div class="error">{{$message}}</div>
@@ -31,7 +31,7 @@
         <div class="form-group">
             <label>
                 画像の詳細
-                <textarea name="body"></textarea>
+                <textarea name="body">{{old('body')}}</textarea>
             </label>
             @error('body')
                 <div class="error">{{$message}}</div>
