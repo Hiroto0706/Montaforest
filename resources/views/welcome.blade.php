@@ -9,6 +9,7 @@
     <ul>
         @forelse ($posts as $post)
             <li>
+                No.{{$post->id}}
                 <a href="{{route('posts.show', $post)}}">
                     {{$post->title}}
                 </a>

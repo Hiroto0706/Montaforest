@@ -7,7 +7,7 @@
         &laquo;<a href="{{route('posts.index')}}">back</a>
     </div>
     <h1>
-        <span>{{$post->title}}</span>
+        <span>No.{{$post->id}} {{$post->title}}</span>
         <a href="{{route('posts.edit', $post)}}">[編集]</a>
         <form method="post" action="{{route('posts.destroy', $post)}}" id="delete_post">
             @method('DELETE')
