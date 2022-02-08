@@ -4,7 +4,7 @@ body{
 }
 
 h1{
-    font-size: 30px;
+    font-size: 20px;
     border-bottom: 1px solid;
     margin: 16px 0;
     padding-bottom: 8px;
@@ -18,9 +18,18 @@ h1 > a{
     margin-left: auto;
 }
 
+ul{
+    display:flex;
+    flex-wrap:wrap;
+    margin: 0;
+    padding: 0;
+}
+
 li{
     line-height: 1.6;
     margin-bottom: 100px;
+    width: calc(50% - 20px);
+    padding-right: 20px;
 }
 
 input,textarea{
@@ -54,16 +63,19 @@ a{
 }
 
 .container{
-    width: 600px;
+    width: 700px;
     margin: 40px auto;
     padding-top: 20px;
 }
 
 .welcome_pic{
-    width: 50%;
+    width: 80%;
     height: auto;
     border: 1px solid;
-    text-align:center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    /* text-align:center; */
 }
 
 .welcome_pic > img{
@@ -87,7 +99,7 @@ a{
 .show_picture{
     width: 600px;
     border: 1px solid;
-    text-align:center;
+    margin: 0 auto;
 }
 
 .show_picture > img{
