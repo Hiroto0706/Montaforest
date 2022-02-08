@@ -4,7 +4,7 @@
     </x-slot>
     <h1>
         <span>もんたの森へようこそ！！</span>
-        <a href="{{route('posts.create')}}">[Add]</a>
+        <a href="{{route('posts.create')}}">[追加]</a>
     </h1>
     <ul>
         @forelse ($posts as $post)
