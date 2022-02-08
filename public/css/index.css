@@ -30,6 +30,7 @@ li{
     width: calc(50% - 20px);
     height: 450px;
     padding-right: 20px;
+    position: relative;
 }
 
 input,textarea{
@@ -73,14 +74,10 @@ a{
     height: auto;
     border: 1px solid;
     display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    vertical-align: middle;
-    /* text-align:center; */
-}
-
-.welcome_pic > img{
-    vertical-align: bottom;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%,-50%);
 }
 
 .form-group{
