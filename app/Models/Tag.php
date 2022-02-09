@@ -5,18 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-//Post -> postsテーブルに紐づいている
-class Post extends Model
+class Tag extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'body',
-        'image'
+        'tag_name',
     ];
 
-    public function tags()
+    public function posts()
     {
         return $this->belongsToMany(Tag::class);
     }
