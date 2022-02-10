@@ -13,6 +13,12 @@
                 <a href="{{route('posts.show', $post)}}">
                     {{$post->title}}
                 </a>
+                <div class="tags">
+                    tag：
+                    @foreach ($post->tags as $tag)
+                    <a href="">#{{$tag->tag_name}}</a>
+                @endforeach
+                </div>
                 <div class="welcome_pic">
                     <img src="{{asset('storage/' . $post->image)}}">
                 </div>
