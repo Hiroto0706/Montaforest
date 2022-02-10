@@ -6,6 +6,13 @@
         <span>もんたの森へようこそ！！</span>
         <a href="{{route('posts.create')}}">[追加]</a>
     </h1>
+    <div>
+        <form action="{{url('/')}}" method="GET">
+            <label for="">タグで検索</label>
+            <input type="text"  name="keyword" value="">
+            <input type="submit" value="検索"  class="btn-primary">
+        </form>
+    </div>
     <ul>
         @forelse ($posts as $post)
             <li>
