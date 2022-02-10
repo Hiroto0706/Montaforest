@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Http\Requests\PostRequest;
 use InterventionImage;
 
@@ -44,7 +45,25 @@ class PostController extends Controller
         //画像の保存
         Storage::put('public/' . $post->image, $resized);
 
+        // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
+        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
+        $tags = [];
+
+        foreach($match[1] as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+            array_push($tags, $found);
+        }
+
+        $tag_ids = [];
+        foreach($tags as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+            array_push($tag_ids, $tag['id']);
+        }
+
         $post->save();
+        $post->tags()->attach($tag_ids);
 
         return redirect()
             ->route('posts.index');
@@ -80,9 +99,29 @@ class PostController extends Controller
 
         //画像の保存
         Storage::put('public/' . $post->image, $resized);
-    }
+        }
+
+        // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
+        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
+        $tags = [];
+
+        foreach($match[1] as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+            array_push($tags, $found);
+        }
+
+        $tag_ids = [];
+        foreach($tags as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+            array_push($tag_ids, $tag['id']);
+        }
+
+        dd($tags);
 
         $post->save();
+        $post->tags()->attach($tag_ids);
 
         return redirect()
             ->route('posts.show', $post);
