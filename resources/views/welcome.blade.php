@@ -7,10 +7,17 @@
         <a href="{{route('posts.create')}}">[追加]</a>
     </h1>
     <div>
-        <form action="{{url('/')}}" method="GET">
-            <label for="">タグで検索</label>
-            <input type="text"  name="keyword" value="">
-            <input type="submit" value="検索"  class="btn-primary">
+        <form action="{{url('/kensaku')}}" method="GET">
+            <label for="">
+                タグで検索
+                <input type="text"  name="kensaku" class="kensaku-form">
+                <input type="submit" value="検索" class="kensaku-btn">
+            </label>
+        </form>
+    </div>
+    <div>
+        <form action="{{url('/showall')}}" method="GET">
+            <input type="submit" value="全て表示">
         </form>
     </div>
     <ul>

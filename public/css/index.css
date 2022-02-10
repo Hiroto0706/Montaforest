@@ -39,6 +39,16 @@ input,textarea{
     box-sizing: border-box;
 }
 
+.kensaku-form{
+    width: 60%;
+}
+
+.kensaku-btn{
+    width: 100px;
+    height: 30px;
+    margin: auto;
+}
+
 textarea{
     height: 160px;
 }

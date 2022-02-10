@@ -18,6 +18,12 @@ use App\Http\Controllers\PostController;
 Route::get('/',[PostController::class, 'index'])
     ->name('posts.index');
 
+Route::get('/kensaku',[PostController::class, 'kensaku'])
+    ->name('posts.kensaku');
+
+Route::get('/showall',[PostController::class, 'index'])
+    ->name('posts.index');
+
 Route::get('/posts/{post}',[PostController::class, 'show'])
     ->name('posts.show')
     ->where('post', '[0-9]+');

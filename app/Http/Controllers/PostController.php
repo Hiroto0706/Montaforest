@@ -101,7 +101,27 @@ class PostController extends Controller
         Storage::put('public/' . $post->image, $resized);
         }
 
+         // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
+         preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
+         $tags = [];
+
+         foreach($match[1] as $tag){
+             $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+             array_push($tags, $found);
+         }
+
+         $tag_ids = [];
+         foreach($tags as $tag){
+             $found = Tag::firstOrCreate(['tag_name' => $tag]);
+
+             array_push($tag_ids, $tag['id']);
+         }
+
+
         $post->save();
+        $post->tags()->attach($tag_ids);
+
 
         return redirect()
             ->route('posts.show', $post);
@@ -113,6 +133,16 @@ class PostController extends Controller
 
         return redirect()
             ->route('posts.index');
+    }
+
+    public function kensaku(Request $request)
+    {
+        $keyword = $request->kensaku;
+        $query = Post::query();
+        $posts = Post::whereHas('tags', function ($query) use ($keyword) {
+            $query->where('tag_name', 'LIKE', "%{$keyword}%");
+        })->latest()->get();
+        return view("welcome", ["posts" => $posts]);
     }
 
 }
