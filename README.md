@@ -35,7 +35,7 @@
 また、デプロイもしていないのでherokuかAWSを使ってデプロイしようと思います！
 
 # 私について
-TwitterとQiitaにて不定期ですが、つぶやきと記事の投稿をしています〜！
+TwitterとQiitaにて不定期ですが、つぶやきと記事の投稿をしています〜！<br>
 Twitterのアカウント→@hiroto_kadota
 QiitaのURL→https://qiita.com/Hiroto0706
 
