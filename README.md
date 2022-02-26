@@ -36,6 +36,6 @@
 
 # 私について
 TwitterとQiitaにて不定期ですが、つぶやきと記事の投稿をしています〜！<br>
-Twitterのアカウント→@hiroto_kadota
+Twitterのアカウント→@hiroto_kadota<br>
 QiitaのURL→https://qiita.com/Hiroto0706
 
