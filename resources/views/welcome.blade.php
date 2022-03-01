@@ -6,7 +6,7 @@
         <span>もんたの森へようこそ！！</span>
         <a href="{{route('posts.create')}}">[追加]</a>
     </h1>
-    <div>
+    <div class="kensaku-div">
         <form action="{{url('/kensaku')}}" method="GET">
             <label for="">
                 タグで検索
@@ -15,9 +15,9 @@
             </label>
         </form>
     </div>
-    <div>
+    <div class="show-all-div">
         <form action="{{url('/showall')}}" method="GET">
-            <input type="submit" value="全て表示">
+            <input class="all-show" type="submit" value="全て表示">
         </form>
     </div>
     <ul>
