@@ -101,26 +101,26 @@ class PostController extends Controller
         Storage::put('public/' . $post->image, $resized);
         }
 
-        //  // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
-        //  preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
-        //  $tags = [];
+        // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
+        preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
+        $tags = [];
 
-        //  foreach($match[1] as $tag){
-        //      $found = Tag::firstOrCreate(['tag_name' => $tag]);
+        foreach($match[1] as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
 
-        //      array_push($tags, $found);
-        //  }
+            array_push($tags, $found);
+        }
 
-        //  $tag_ids = [];
-        //  foreach($tags as $tag){
-        //      $found = Tag::firstOrCreate(['tag_name' => $tag]);
+        $tag_ids = [];
+        foreach($tags as $tag){
+            $found = Tag::firstOrCreate(['tag_name' => $tag]);
 
-        //      array_push($tag_ids, $tag['id']);
-        //  }
+            array_push($tag_ids, $tag['id']);
+        }
 
 
         $post->save();
-        // $post->tags()->attach($tag_ids);
+        $post->tags()->syncWithoutDetaching($tag_ids);
 
 
         return redirect()
@@ -138,6 +138,15 @@ class PostController extends Controller
     public function kensaku(Request $request)
     {
         $keyword = $request->kensaku;
+        $query = Post::query();
+        $posts = Post::whereHas('tags', function ($query) use ($keyword) {
+            $query->where('tag_name', 'LIKE', "%{$keyword}%");
+        })->latest()->get();
+        return view("welcome", ["posts" => $posts]);
+    }
+
+    public function showTag(Tag $tag){
+        $keyword = $tag->tag_name;
         $query = Post::query();
         $posts = Post::whereHas('tags', function ($query) use ($keyword) {
             $query->where('tag_name', 'LIKE', "%{$keyword}%");

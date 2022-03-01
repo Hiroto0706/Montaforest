@@ -39,14 +39,29 @@ input,textarea{
     box-sizing: border-box;
 }
 
+.kensaku-div{
+    padding-bottom: 15px;
+}
+
 .kensaku-form{
     width: 60%;
 }
 
 .kensaku-btn{
     width: 100px;
-    height: 30px;
+    height: 27.5px;
     margin: auto;
+    vertical-align: bottom;
+}
+
+.show-all-div{
+    padding-bottom: 15px;
+}
+
+.all-show{
+    padding: 4px;
+    width: 10%;
+    box-sizing: border-box;
 }
 
 textarea{

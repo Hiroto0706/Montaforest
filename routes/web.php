@@ -21,6 +21,10 @@ Route::get('/',[PostController::class, 'index'])
 Route::get('/kensaku',[PostController::class, 'kensaku'])
     ->name('posts.kensaku');
 
+Route::get('/showTag/{tag}',[PostController::class, 'showTag'])
+    ->name('posts.showTag')
+    ->where('tag', '[0-9]+');
+
 Route::get('/showall',[PostController::class, 'index'])
     ->name('posts.index');
 
