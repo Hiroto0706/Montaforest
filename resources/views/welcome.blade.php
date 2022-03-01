@@ -30,7 +30,7 @@
                 <div class="tags">
                     tag：
                     @foreach ($post->tags as $tag)
-                    <a href="">#{{$tag->tag_name}}</a>
+                    <a href="{{route('posts.showTag', $tag)}}">#{{$tag->tag_name}}</a>
                 @endforeach
                 </div>
                 <div class="welcome_pic">

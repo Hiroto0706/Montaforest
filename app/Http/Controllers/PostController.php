@@ -120,7 +120,7 @@ class PostController extends Controller
 
 
         $post->save();
-        $post->tags()->sync($tag_ids);
+        $post->tags()->syncWithoutDetaching($tag_ids);
 
 
         return redirect()
@@ -138,6 +138,15 @@ class PostController extends Controller
     public function kensaku(Request $request)
     {
         $keyword = $request->kensaku;
+        $query = Post::query();
+        $posts = Post::whereHas('tags', function ($query) use ($keyword) {
+            $query->where('tag_name', 'LIKE', "%{$keyword}%");
+        })->latest()->get();
+        return view("welcome", ["posts" => $posts]);
+    }
+
+    public function showTag(Tag $tag){
+        $keyword = $tag->tag_name;
         $query = Post::query();
         $posts = Post::whereHas('tags', function ($query) use ($keyword) {
             $query->where('tag_name', 'LIKE', "%{$keyword}%");
