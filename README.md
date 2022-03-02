@@ -11,7 +11,7 @@
 ## 使った技術
 - PHP(8.1.2)
 - Laravel(8.82.0)
-- -MySQL(8.0.27 for macos11.6 on arm64 (Homebrew))
+- MySQL(8.0.27 for macos11.6 on arm64 (Homebrew))
 - Docker(20.10.12)
   
 　　
