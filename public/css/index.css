@@ -92,11 +92,11 @@ img{
 
 .show-text-div{
     padding-top: 30px;
-    padding-bottom: 100px;
+    padding-bottom: 30px;
 }
 
 .show-text{
-    width: 60%;
+    width: 70%;
     margin: auto;
     padding: 1em;
     background-color: #ffffff;
@@ -152,3 +152,18 @@ a{
     cursor: pointer;
     vertical-align: 5px;
 }
+
+/* fotterのcss */
+footer{
+    height: 500px;
+    padding-top: 200px;
+  }
+
+  .fotter_p{
+    background-color: rgb(28, 27, 27);
+    color: white;
+    height: 37em; /* emは１文字分の長さを表している */
+    display: flex; /* ある要素を並列にする操作 */
+    align-items: center; /*交差軸に対し中央に配置 */
+    justify-content: center; /* 主軸に対して中央に配置 */
+  }
