@@ -68,7 +68,7 @@ storeメソッドには画像をpublicフォルダに保存するようにして
 
 以下、app>Http>Controllers>PostControllerの３３行目にあるstoreメソッドの内容になります。
   
-```php:PostController
+```php
  public function store(PostRequest $request)
     {
         $post = new Post();
