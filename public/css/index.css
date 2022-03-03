@@ -90,6 +90,19 @@ img{
     border: 1px solid;
 }
 
+.show-text-div{
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+.show-text{
+    width: 60%;
+    margin: auto;
+    padding: 1em;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
 a{
     text-decoration: none;
 }

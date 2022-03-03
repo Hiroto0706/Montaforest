@@ -18,7 +18,7 @@
     <div class="show_picture">
         <img src="{{asset('storage/' . $post->image)}}">
     </div>
-    <p>{!! nl2br(e($post->body)) !!}</p>
+    <div class="show-text-div"><p class="show-text">{!! nl2br(e($post->body)) !!}</p></div>
 </x-layout>
 
 <script>
