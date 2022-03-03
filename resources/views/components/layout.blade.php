@@ -11,5 +11,10 @@
     <div class="container">
        {{$slot}}
     </div>
+    <footer>
+        <div class="fotter_p">
+            <p>もんたの森</p>
+        </div>
+    </footer>
 </body>
 </html>
