@@ -97,11 +97,9 @@ class PostController extends Controller
             $constraint->aspectRatio();
         })->save();
 
-        //画像の保存
         Storage::put('public/' . $post->image, $resized);
         }
 
-        // #(ハッシュタグ)で始まる単語を取得。結果は、$matchに多次元配列で代入される。
         preg_match_all('/#([a-zA-z0-9０-９ぁ-んァ-ヶ亜-熙]+)/u', $request->body, $match);
         $tags = [];
 
