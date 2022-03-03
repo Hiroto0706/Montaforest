@@ -18,11 +18,14 @@
 # デモ画面
 ### フロント画面
 ![スクリーンショット 2022-02-26 20 35 42](https://user-images.githubusercontent.com/87826418/155841648-a39a1ac9-718d-4d66-a879-8347905b7a95.jpg)
-![スクリーンショット 2022-03-03 9 35 38](https://user-images.githubusercontent.com/87826418/156473452-bb25e74d-73d2-47b1-8eb4-8e1335dfceb5.jpg)
+![スクリーンショット 2022-03-03 14 06 32](https://user-images.githubusercontent.com/87826418/156499988-f6eafc1a-b1f7-4b93-b2a1-94bb84ce0e60.jpg)
+![スクリーンショット 2022-03-03 14 29 41](https://user-images.githubusercontent.com/87826418/156502269-834ce7ad-3716-4ef3-b786-96f7d84c4493.jpg)
 
 
 ### 画像の詳細画面
-![スクリーンショット 2022-02-26 20 53 48](https://user-images.githubusercontent.com/87826418/155842179-41e6305f-496a-4794-bf9f-a2475f5a3047.jpg)
+![スクリーンショット 2022-03-03 14 28 18](https://user-images.githubusercontent.com/87826418/156502160-2427e274-c091-472c-b4b1-eb6a54852b45.jpg)
+![スクリーンショット 2022-03-03 14 29 07](https://user-images.githubusercontent.com/87826418/156502216-8229becc-d945-441c-b19a-153188b8720e.jpg)
+
 
 ### 画像の投稿画面
 画像の投稿は以下のようにタイトル、画像、投稿内容を記述することで投稿可能です。<br>
